@@ -12,3 +12,5 @@ unsigned int    lcm(unsigned int a, unsigned int b)
         n++;
     }
 }
+
+//aqui si que pueden ser negativos pero en pgdg nooooo

@@ -41,6 +41,7 @@ char **ft_split(char *str)
 {
     char **words;
     int i = 0;
+    int j = 0;
     int len;
 
     int total_words = count_words(str);
@@ -48,20 +49,21 @@ char **ft_split(char *str)
     if (!words)
         return (NULL);
     
-    while (*str)
+    while (str[i])
     {
-        while (*str && is_space(*str))
-            str++;
+        while (str[i] && is_space(str[i]))
+            i++;
         len = 0;
-        while (str[len] && !is_space(str[len]))
+        while (str[i + len] && !is_space(str[i + len]))
             len++;
         if (len > 0)
         {
-            words[i] = word_dup(str, len);
-            i++;
-            str += len;
+            words[j] = word_dup(str, len);
+            j++;
+            i += len;
         }
     }
     words[i] = NULL;
     return (words);
 }
+

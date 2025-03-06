@@ -16,11 +16,12 @@ unsigned int ft_atoi(char *str)
 void put_hex(int nbr)
 {
     char *digits = "0123456789abcdef";
+    char c;
 
     if (nbr >= 16)
         put_hex(nbr / 16);
-    nbr = digits[nbr % 16];
-    write(1, &nbr, 1);
+    c = digits[nbr % 16];  // Guarda el dígito hexadecimal en una variable char
+    write(1, &c, 1);
 }
 
 int main(int ac, char **av)

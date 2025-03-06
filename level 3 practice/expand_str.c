@@ -1,4 +1,4 @@
-#include <unistd.h>
+i#include <unistd.h>
 
 void ft_putchar(char c)
 {
@@ -10,7 +10,7 @@ int is_space(char c)
     if (c <= 32)
         return 1;
     return 0;
-}   
+}
 
 int main(int ac, char **av)
 {
@@ -22,11 +22,11 @@ int main(int ac, char **av)
         while (av[1][i])
         {
             if (is_space(av[1][i]))
-                space = 1;
+                 space = 1;
             if (!is_space(av[1][i]))
             {
                 if (space)
-                    ft_putchar(' ');
+                    write(1, "   ", 3);
                 space = 0;
                 ft_putchar(av[1][i]);
             }

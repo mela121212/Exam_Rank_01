@@ -7,6 +7,11 @@ int ft_isspace(char c)
     return (0);
 }
 
+void ft_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
 void capitalizer(char *s)
 {
     int i = 0;
@@ -16,7 +21,7 @@ void capitalizer(char *s)
              s[i] += 32;
          if ((s[i] >= 'a' && s[i] <= 'z') && ft_isspace(s[i + 1]))
              s[i] -= 32;
-         write(1, &s[i++], 1);
+         ft_putchar(s[i++]);
     }
 }
 
@@ -30,20 +35,8 @@ int main(int ac, char **av)
         while (i < ac)
         {
             capitalizer(av[i]);
-            write(1, "/n", 1);
+            ft_putchar('\n');
             i++;
         } 
-    }
-}
-
-
-int main(int ac, char **av)
-{
-    if(ac >= 2)
-    {
-        while(i < ac)
-        {
-
-        }
     }
 }
